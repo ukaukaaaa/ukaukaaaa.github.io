@@ -20,8 +20,8 @@ body {
 	margin-bottom: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 30px;
-	padding-right: 30px;
+	padding-left: 300px;
+	padding-right: 300px;
 	padding-top: 10px;
 	padding-bottom: 20px;
 	max-width: 1250px;
@@ -47,8 +47,8 @@ body {
 
 #layout-content {
 	padding-top: 0.0em;
-	padding-left: 10.0em;
-	padding-right: 10.0em;
+	padding-left: 5.0em;
+	padding-right: 5.0em;
     border: none;
     background: white;
     text-align: left;
