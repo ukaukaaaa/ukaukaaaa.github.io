@@ -171,7 +171,7 @@
 
 
                 </p>
-                <img class="img-responsive" src="project/piton/framework.png">
+                <img class="img-responsive" src="./projects/piton/framework.png">
                 <p class="text-justify">
                     To do so, we propose the following framework. The user will first upload a source image accompany with a text prompt or a cloth image prompt. 
 
@@ -182,7 +182,7 @@
             </p>
             <h4>Extend ControlNet to Finetune the Stable Diffusion for Text-guided VITON
             </h4>
-            <img class="img-responsive" src="project/piton/text.png" >
+            <img class="img-responsive" src="./projects/piton/text.png" >
             <p class="text-justify">
                 Now I introduce how we extend stable diffusion model for Virtual Try-on by the controlnet. We freeze the pretrained autoencoder and the stable diffusion model, which is released by Stability AI. 
                 
@@ -191,11 +191,11 @@
                 The controlnet is a copy of the SD encoder which will input the boundary map to constraint on the generation. The text prompt will input to the text encoder and condition on the whole generation process in stable diffusion.
                 
             <h4>Qualitative Results of Text-guided VITON </h4>
-            <img class="img-responsive" src="project/piton/textresults.png" >
+            <img class="img-responsive" src="./projects/piton/textresults.png" >
 
             </p>
             <h4>Explored Image-guided VITON </h4>
-            <img class="img-responsive" src="project/piton/image.png" >
+            <img class="img-responsive" src="./projects/piton/image.png" >
             <p class="text-justify">
                 Originally we have text prompt here, and we input the edge map into the controlnet to control the image generation.
 
@@ -210,10 +210,10 @@
                 This is better because the image and cloth is not passed into encoder and they can directly do the alignment in the image space, and also there will be pixel-wise supervision to make the final prediction look more natural.
 
             <h4>An Interactive Demo for Proof-of-Concept </h4>
-            <img class="img-responsive" src="project/piton/video.gif" >
+            <img class="img-responsive" src="./projects/piton/video.gif" >
 
             <h4>Qualitative Results of Image-guided VITON </h4>
-            <img class="img-responsive" src="project/piton/imageresults.png" >
+            <img class="img-responsive" src="./projects/piton/imageresults.png" >
 
 
             </p>
