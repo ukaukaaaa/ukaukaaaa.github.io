@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Open-Vocabulary Semantic Segmentation with Mask-adapted CLIP">
+  <meta name="keywords" content="Vision-language models, Open-vocabulary segmentation, CLIP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GazeSAM: Interactive Image Segmentation with Eye Gaze and Segment Anything Model</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/ut_icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GazeSAM: Interactive Image Segmentation with Eye Gaze and Segment Anything Model</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ukaukaaaa.github.io">Bin Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://aboah1994.github.io/">Armstrong Aboah</a><sup>2</sup>,</span>
+            <span class="author-block">
+              Zheyuan Zhang<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Hongyi Pan<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://bagcilab.com">Ulas Bagci</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Northwestern University,</span>
+            <span class="author-block"><sup>2</sup>University of Arizona</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=hJ5DREWdjs"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=xIUSG0pLNyo&t=119s"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+               <!--Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ukaukaaaa/GazeSAM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="image-container">
+        <img class="img-responsive" src="./3d1.gif" alt="Image 1">
+        <img class="img-responsive" src="./3d2.gif" alt="Image 2">
+    </div>
+      <h2 class="subtitle has-text-centered">
+        Our model is a novel <span style="color: orange; font-weight:bold">interactive image segmentation system</span> that utilizes <span style="color: orange; font-weight:bold">eye gaze</span> as the interactive prompt instead of the mouse-based interaction. 
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Interactive image segmentation aims to assist users in efficiently generating high-quality data annotations through user-friendly interactions such as clicking, scribbling, and bounding boxes. However, mouse-based interaction methods can induce user fatigue during large-scale dataset annotation and are not entirely suitable for some domains, such as radiology. This study introduces eye gaze as a novel interactive prompt for image segmentation, different than previous model-based applications. Specifically, leveraging the real-time interactive prompting feature of the recently proposed Segment Anything Model (SAM), we present the GazeSAM system to enable users to collect target segmentation masks by simply looking at the region of interest. GazeSAM tracks users' eye gaze and utilizes it as the input prompt for SAM, generating target segmentation masks in real time. To our best knowledge, GazeSAM is the first work to combine <span style="color: orange; font-weight:bold">eye gaze</span> and <span style="color: orange; font-weight:bold">SAM</span> for interactive image segmentation. Experimental results demonstrate that <span style="color: orange; font-weight:bold">GazeSAM can improve nearly 50% efficiency in 2D natural image and 3D medical image segmentation tasks</span>. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!--&lt;!&ndash; Paper video. &ndash;&gt;-->
+    <!--<div class="columns is-centered has-text-centered">-->
+      <!--<div class="column is-four-fifths">-->
+        <!--<h2 class="title is-3">Video</h2>-->
+        <!--<div class="publication-video">-->
+          <!--<iframe src="h"-->
+                  <!--frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;/ Paper video. &ndash;&gt;-->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <!-- Motivation. -->
+        <h2 class="title is-3">Motivation</h2>
+
+        <div class="subtitle has-text-justified">
+          <p>
+            Our analysis reveals the eye gaze-based interaction is more efficient than mouse-based interaction.
+          </p>
+        </div>
+
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+              </p>
+              <img class="img-responsive" src="./interact.png">
+              <p class="text-justify">
+            <h2 align="left">
+              <p>(a) It is more natural
+                and intuitive because eye gaze-based interaction aligns with how humans naturally perceive
+                objects by simply looking at them.</p>
+              <p>(b) It can reduce user fatigue significantly.
+                Using a mouse to annotate large-scale datasets will lead to a tedious click job.</p>
+              <p>(c) eye gaze enables faster and more efficient interactions. Users can simply glance at the object they want to segment
+                without the need for mouse clicking or drawing</p>
+              <p>(d) Using eye gaze as interaction input
+                can generate multiple prompt input points in less than one second, which can input more
+                information into the automated model in a short time, increasing the accuracy of
+                the generated segmentation masks.</p>
+            </h2>
+          </div>
+        </div>
+
+
+        <br/>
+        <!--/ Motivation. -->
+
+        <!-- Method. -->
+        <h2 class="title is-3">Method</h2>
+
+        <div class="subtitle has-text-justified">
+          <p> </p>
+          <p>
+          </p>
+        </div>
+
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <img class="img-responsive" src="./framework.png">
+            <p class="text-justify">
+            <h2 align="left">
+            </h2>
+          </div>
+        </div>
+        <!--/ Method. -->
+
+        <!-- Results. -->
+        <h2 class="title is-3">Results</h2>
+
+        <div class="subtitle has-text-justified">
+          <p>
+            Experimental results demonstrate that GazeSAM can <span style="color: orange; font-weight:bold">improve nearly 50% efficiency</span> in 2D natural image and 3D medical image segmentation tasks. 
+          </p>
+
+        </div>
+        <!--/ Result image and control size as 70% and in the middle of the row -->
+
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="columns is-centered">
+              <div class="column is-8">
+                <div class="image-container">
+                  <img class="img-responsive" src="./result.png" alt="Image 1">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/ Result image and control size as 70% and in the middle of the row -->
+        
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="columns is-centered">
+              <div class="column is-8">
+                <div class="image-container">
+                  <img class="img-responsive" src="./visual.png" alt="Image 1">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+        <br/>
+        <!--/ Motivation. -->
+
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+        <pre><code>@article{wang2023gazesam,
+          title={GazeSAM: What You See is What You Segment},
+          author={Wang, Bin and Aboah, Armstrong and Zhang, Zheyuan and Bagci, Ulas},
+          journal={arXiv preprint arXiv:2304.13844},
+          year={2023}
+        }
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://openreview.net/pdf?id=hJ5DREWdjs">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/ukaukaaaa/GazeSAM" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Thanks to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a href="https://jerryxu.net/GroupViT">GroupViT</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
