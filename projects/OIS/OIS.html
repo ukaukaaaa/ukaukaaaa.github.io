@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="description"
         content="GazeSAM">
-  <meta name="keywords" content="SAM, Eye Gaze, Interaction Image Segmentation">
+  <meta name="keywords" content="Interaction Image Segmentation, Interactive Segmentation, Order, Depth">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GazeSAM: Interactive Image Segmentation with Eye Gaze and Segment Anything Model</title>
+  <title>Order-aware Interactive Segmentation</title>
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -30,31 +30,48 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">GazeSAM: Interactive Image Segmentation with Eye Gaze and Segment Anything Model</h1>
+          <h1 class="title is-1 publication-title">Order-aware Interactive Segmentation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://ukaukaaaa.github.io">Bin Wang</a><sup>1</sup>,</span>
+              <a href="https://ukaukaaaa.github.io">Bin Wang</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              <a href="https://aboah1994.github.io/">Armstrong Aboah</a><sup>2</sup>,</span>
+              <a href="https://aboah1994.github.io/">Anwesa Choudhuri</a><sup>2</sup>,</span>
             <span class="author-block">
-              Zheyuan Zhang<sup>1</sup>,
+              Meng Zheng<sup>2</sup>,
             </span>
             <span class="author-block">
-              Hongyi Pan<sup>1</sup>,
+              Zhongpai Gao<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://bagcilab.com">Benjamin Planche</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://bagcilab.com">Andong Deng</a><sup>3</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://bagcilab.com">Qin Liu</a><sup>4</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://bagcilab.com">Terrence Chen</a><sup>2</sup>
             </span>
             <span class="author-block">
               <a href="https://bagcilab.com">Ulas Bagci</a><sup>1</sup>
-            </span>
+            </span>      
+            <span class="author-block">
+              <a href="https://bagcilab.com">Ziyan Wu</a><sup>2</sup>
+            </span>                                                                                                 
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Northwestern University,</span>
-            <span class="author-block"><sup>2</sup>University of Arizona</span>
+            <span class="author-block"><sup>1</sup>Northwestern University</span>
+            <span class="author-block"><sup>2</sup>United Imaging Intelligence</span>
+            <span class="author-block"><sup>3</sup>University of Central Florida</span>
+            <span class="author-block"><sup>4</sup>University of North Carolina</span>
           </div>
-
+<!-- 
           <div class="is-size-5 conference">
-            NeurIPS Workshop, 2023
-          </div>
+
+          </div> -->
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -79,7 +96,7 @@
               </span> -->
                <!--Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/ukaukaaaa/GazeSAM"
+                <a href="https://github.com/ukaukaaaa/OIS"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -103,7 +120,7 @@
         <img class="img-responsive" src="./3d2.gif" alt="Image 2">
     </div>
       <h2 class="subtitle has-text-centered">
-        Our model is a novel <span style="color: orange; font-weight:bold">interactive image segmentation system</span> that utilizes <span style="color: orange; font-weight:bold">eye gaze</span> as the interactive prompt instead of the mouse-based interaction. 
+        We propose OIS: <span style="color: orange; font-weight:bold">order-aware interactive segmentation</span>, to explicitly integrate <span style="color: orange; font-weight:bold">missing relative depth infomation</span> into 2D interactive segmentation.
       </h2>
     </div>
   </div>
@@ -118,7 +135,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Interactive image segmentation aims to assist users in efficiently generating high-quality data annotations through user-friendly interactions such as clicking, scribbling, and bounding boxes. However, mouse-based interaction methods can induce user fatigue during large-scale dataset annotation and are not entirely suitable for some domains, such as radiology. This study introduces eye gaze as a novel interactive prompt for image segmentation, different than previous model-based applications. Specifically, leveraging the real-time interactive prompting feature of the recently proposed Segment Anything Model (SAM), we present the GazeSAM system to enable users to collect target segmentation masks by simply looking at the region of interest. GazeSAM tracks users' eye gaze and utilizes it as the input prompt for SAM, generating target segmentation masks in real time. To our best knowledge, GazeSAM is the first work to combine <span style="color: orange; font-weight:bold">eye gaze</span> and <span style="color: orange; font-weight:bold">SAM</span> for interactive image segmentation. Experimental results demonstrate that <span style="color: orange; font-weight:bold">GazeSAM can improve nearly 50% efficiency in 2D natural image and 3D medical image segmentation tasks</span>. 
+            Interactive segmentation aims to accurately segment target objects with minimal user interactions. However, current methods often fail to accurately separate target objects from the background, due to a limited understanding of order, the relative depth between objects in a scene. To address this issue, we propose OIS: order-aware interactive segmentation, where we explicitly encode the relative depth between objects into order maps. We introduce a novel order-aware attention, where the order maps seamlessly guide the user interactions (in the form of clicks) to attend to the image features. We further present an object-aware attention module to incorporate a strong object-level understanding to better differentiate objects with similar order. Our approach allows both dense and sparse integration of user clicks, enhancing both accuracy and efficiency as compared to prior works. Experimental results demonstrate that OIS achieves state-of-the-art performance, improving mIoU after one click by <span style="color: orange; font-weight:bold">7.61</span> on the HQSeg44K dataset and <span style="color: orange; font-weight:bold">1.32</span> on the DAVIS dataset as compared to the previous state-of-the-art SegNext, while also doubling inference speed compared to current leading methods. 
           </p>
         </div>
       </div>
