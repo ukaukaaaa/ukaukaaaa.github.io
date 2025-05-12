@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="GazeSAM">
+  <meta name="keywords" content="SAM, Eye Gaze, Interaction Image Segmentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GazeGNN: A Gaze-Guided Graph Neural Network for Chest X-ray Classification</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/ut_icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GazeGNN: A Gaze-Guided Graph Neural Network for Chest X-ray Classification</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://ukaukaaaa.github.io">Bin Wang</a><sup>1</sup>,</span>
+            <span class="author-block">Hongyi Pan<sup>1</sup>,</span>
+            <span class="author-block"><a href="https://aboah1994.github.io/">Armstrong Aboah</a><sup>2</sup>,</span>
+            <span class="author-block">Zheyuan Zhang<sup>1</sup>,</span>
+            <span class="author-block">Elif Keles<sup>3</sup>,</span>
+            <span class="author-block">Drew Torigian<sup>3</sup>,</span>
+            <span class="author-block">Baris Turkbey<sup>4</sup>,</span>
+            <span class="author-block">Elizabeth Krupinski<sup>2</sup>,</span>
+            <span class="author-block">Jayaram Udupa<sup>3</sup>,</span>
+            <span class="author-block"><a href="https://bagcilab.com">Ulas Bagci</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Northwestern University&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>2</sup>University of Arizona&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>3</sup>University of Pennsylvania&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>4</sup>National Institutes of Health</span>
+          </div>
+
+          <div class="is-size-5 conference">
+            WACV 2024
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2305.18221"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=xIUSG0pLNyo&t=119s"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+               <!--Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ukaukaaaa/GazeGNN"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="image-container">
+        <img class="img-responsive" src="./3d1.gif" alt="Image 1">
+        <img class="img-responsive" src="./3d2.gif" alt="Image 2">
+    </div>
+      <h2 class="subtitle has-text-centered">
+        <span style="color: orange; font-weight: bold">GazeGNN</span> integrates raw <span style="color: orange; font-weight:bold">eye gaze</span> with image features through a unified representation graph, enabling <span style="color: orange; font-weight:bold">real‑time</span> chest‑X‑ray disease classification without the costly visual attention map preprocessing.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Eye tracking research is important in computer vision because it can help us understand how humans interact with the visual world. Specifically for high-risk applications, such as in medical imaging, eye tracking can help us to comprehend how radiologists and other medical professionals search, analyze, and interpret images for diagnostic and clinical purposes. Hence, the application of eye tracking techniques in disease classification has become increasingly popular in recent years. Contemporary works usually transform gaze information collected by eye track ing devices into visual attention maps (VAMs) to supervise the learning process. However, this is a time-consuming preprocessing step, which stops us from applying eye track ing to radiologists’ daily work. To solve this problem, we propose a novel gaze-guided graph neural network (GNN), GazeGNN, to leverage raw eye-gaze data without being converted into VAMs. In GazeGNN, to directly integrate eye gaze into image classification, we create a unified representation graph that models both images and gaze pattern information. With this benefit, we develop a real-time, real-world, end-to-end disease classification algorithm for the first time in the literature. This achievement demonstrates the practicality and feasibility of integrating real-time eye tracking techniques into the daily work of radiologists. To our best knowledge, GazeGNN is the first work that adopts GNN to integrate image and eye-gaze data. Our experiments on the public chest X-ray dataset show that our proposed method exhibits the best classification performance compared to existing methods. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!--&lt;!&ndash; Paper video. &ndash;&gt;-->
+    <!--<div class="columns is-centered has-text-centered">-->
+      <!--<div class="column is-four-fifths">-->
+        <!--<h2 class="title is-3">Video</h2>-->
+        <!--<div class="publication-video">-->
+          <!--<iframe src="h"-->
+                  <!--frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;/ Paper video. &ndash;&gt;-->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Motivation</h2>
+        <div class="subtitle has-text-justified">
+          <p>Transforming gaze data into dense VAMs incurs heavy preprocessing and discards temporal cues. By representing sparse fixations as <em>nodes</em> in a graph and jointly reasoning over imaging and gaze vertices, GazeGNN:</p>
+          <ul style="margin-left: 1.2em; list-style-type: disc;">
+            <li>Eliminates VAM generation, cutting <strong>inference latency from&nbsp;9.2&nbsp;s to&nbsp;0.35&nbsp;s</strong>.</li>
+            <li>Retains rich temporal‑spatial gaze patterns that correlate with expert diagnostic reasoning.</li>
+            <li>Enables end‑to‑end training on limited annotated scans via weight sharing across graph nodes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- Method. -->
+        <h2 class="title is-3">Method</h2>
+
+        <div class="subtitle has-text-justified">
+          <p> </p>
+          <p>
+          </p>
+        </div>
+
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <img class="img-responsive" src="./framework.png">
+            <p class="text-justify">
+            <h2 align="left">
+            </h2>
+          </div>
+        </div>
+        <!--/ Method. -->
+
+        <!-- Results. -->
+        <h2 class="title is-3">Results</h2>
+
+        <div class="subtitle has-text-justified">
+          <p>
+            GazeGNN surpasses prior gaze‑aware and gaze‑free methods on MIMIC‑CXR three‑class disease classification while maintaining real‑time speed.
+          </p>
+
+        </div>
+        <!--/ Result image and control size as 70% and in the middle of the row -->
+
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="columns is-centered">
+              <div class="column is-8">
+                <div class="image-container">
+                  <img class="img-responsive" src="./result.png" alt="Image 1">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/ Result image and control size as 70% and in the middle of the row -->
+        
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="columns is-centered">
+              <div class="column is-8">
+                <div class="image-container">
+                  <img class="img-responsive" src="./visual.png" alt="Image 1">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+        <br/>
+        <!--/ Motivation. -->
+
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{wang2024gazegnn,
+  title={Gazegnn: A gaze-guided graph neural network for chest x-ray classification},
+  author={Wang, Bin and Pan, Hongyi and Aboah, Armstrong and Zhang, Zheyuan and Keles, Elif and Torigian, Drew and Turkbey, Baris and Krupinski, Elizabeth and Udupa, Jayaram and Bagci, Ulas},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={2194--2203},
+  year={2024}
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://openreview.net/pdf?id=hJ5DREWdjs">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/ukaukaaaa/GazeSAM" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Thanks to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and <a href="https://jerryxu.net/GroupViT">GroupViT</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
