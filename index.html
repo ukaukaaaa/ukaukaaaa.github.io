@@ -1,577 +1,292 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" slick-uniqueid="3">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!--meta data-->
-	<meta name="google-site-verification" content="-rMHxo-cl0Jew02VvS79wZX7LGscTuFAdqKXFv1OWYY" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="Bin Wang, Northwestern University, NWU, NU, 美国西北大学, ShanghaiTech Unviersity, Shanghaitech, 上海科技大学">
-    <meta name="description" content="Bin Wang's Homepage">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	
-    <link rel="stylesheet" href="./css/jemdoc.css" type="text/css">
-    <style type="text/css">
-	</style>
-    <title>Bin Wang - Homepage</title>
-<!-- 	<link rel="shortcut icon" href="./avatar/icon/NU.jpg"> -->
-<!--     <link rel="apple-touch-icon" sizes="180x180" href="./avatar/icon/NU.jpg"> -->
-<!--     <link rel="icon" type="image/png" sizes="16x16" href="./avatar/icon/NU.jpg"> -->
-<!--     <link rel="manifest" href="./avatar/icon/NU.jpg"> -->
-<!--     <link rel="mask-icon" href="./avatar/icon/NU.jpg" color="#5bbad5"> -->
-    <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="-rMHxo-cl0Jew02VvS79wZX7LGscTuFAdqKXFv1OWYY">
+  <meta name="description" content="Bin Wang (王斌). Ph.D. in ECE, Northwestern University. Human-centered AI, multimodal LLMs, eye tracking, smart glasses.">
+  <meta name="keywords" content="Bin Wang, 王斌, Northwestern University, 美国西北大学, ShanghaiTech University, 上海科技大学, eye tracking, multimodal LLM">
+  <title>Bin Wang (王斌)</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="avatar/icon/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="avatar/icon/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
 </head>
-
 <body>
 
-<div id="layout-content" style="margin-top: 25px">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#about">Bin Wang</a>
+    <nav class="menu" id="menu">
+      <a href="#about" class="active">About</a>
+      <a href="#news">News</a>
+      <a href="#experience">Background</a>
+      <a href="#publications">Publications</a>
+      <a href="#service">Service</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
 
-    <table style="width: 100%; table-layout: fixed;">
-        <tbody>
-            <tr>
-                <td width="65%" valign="top" style="padding-right: 20px;">
-                    <div style="font-family: Verdana, sans-serif;">
-                        <b style="font-size: 2.5em; display: block;">Bin Wang (王斌)</b>
-                        <br><br>
-                        <span style="font-size: 1.5em;">Northwestern University</span>
-                        <br><br>
-                        <span style="font-size: 1.1em;">Email: bin.wang@northwestern.edu</span>
-                        <br><br>
-                        <div style="font-size: 1.1em;">
-                            <a href="https://scholar.google.com/citations?user=XWNsMhYAAAAJ&hl=en" target="_blank">Google Scholar</a> /
-                            <a href="https://github.com/ukaukaaaa" target="_blank">Github</a> /
-                            <a href="https://www.linkedin.com/in/bin-wang-7baa41214/" target="_blank">LinkedIn</a> /
-                            <a href="./Bin Wang CV.pdf" target="_blank">Resume</a>
-                        </div>
-                    </div>
-                </td>
-                
-                <td width="35%" valign="top" style="text-align: center;">
-                    <img height="320" id="photo" style="border-radius: 10px; padding: 10px;" src="avatar/cvprprofile.jpg" alt="Bin Wang Photo">
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="container">
+
+  <!-- ================= Hero / About ================= -->
+  <section id="about" class="hero">
+    <aside class="hero-side">
+      <img class="photo" src="avatar/cvprprofile.jpg" alt="Bin Wang">
+      <ul class="linklist"><li><a href="https://scholar.google.com/citations?user=XWNsMhYAAAAJ&hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5Z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg><span>Google Scholar</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li><li><a href="https://github.com/ukaukaaaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><span>GitHub</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li><li><a href="https://www.linkedin.com/in/bin-wang-7baa41214/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg><span>LinkedIn</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li><li><a href="Bin Wang CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span>CV</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li><li><a href="mailto:bin.wang@northwestern.edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Email</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li></ul>
+    </aside>
+    <div class="hero-main">
+      <h1 class="hero-name">Bin Wang <span class="hero-cn">王斌</span></h1>
+
+      <div class="hero-text">
+        <p>Hi, thanks for stopping by! I recently completed my Ph.D. in Electrical and Computer Engineering at <a href="https://www.northwestern.edu/" target="_blank" rel="noopener">Northwestern University</a>, advised by Prof. <a href="https://scholar.google.com/citations?user=9LUdPM4AAAAJ&hl=en" target="_blank" rel="noopener">Ulas Bagci</a> and Prof. <a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/katsaggelos-aggelos.html" target="_blank" rel="noopener">Aggelos K. Katsaggelos</a>. My dissertation, <em>Toward Hybrid Intelligence</em>, studies how human perception can guide and evaluate AI across medical imaging and wearable AR.</p>
+        <p>Before Northwestern, I received my B.Eng. in Computer Science from <a href="https://www.shanghaitech.edu.cn/eng/" target="_blank" rel="noopener">ShanghaiTech University</a> in 2022, where I worked with Prof. <a href="https://scholar.google.com/citations?hl=en&user=v6VYQC8AAAAJ" target="_blank" rel="noopener">Dinggang Shen</a>. I have also worked at United Imaging Intelligence (2024) and Meta Reality Labs (2025, 2026) with many amazing collaborators.</p>
+        <p>I mainly work on <strong>human-centered multimodal AI</strong>, bringing human signals such as eye gaze and physiological time series into multimodal LLMs. Topics include LLM agents for smart glasses, gaze-guided learning, personalization, interactive segmentation, and post-training (SFT, RL) for multimodal ranking.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news">
+      <h2>News</h2>
+      <ul class="news" id="newsList">
+        <li><time>11/2026</time><span><span class="hl">Defended my Ph.D. dissertation</span>, <em>Toward Hybrid Intelligence</em>. Thank you to my advisors and committee!</span></li>
+        <li><time>06/2026</time><span>Started my second summer internship at <a href="https://www.meta.com/emerging-tech/reality-labs/" target="_blank" rel="noopener">Meta Reality Labs</a> as a Research Scientist Intern.</span></li>
+        <li><time>05/2026</time><span>Released <a href="https://arxiv.org/abs/2605.05790" target="_blank" rel="noopener">GazeMind</a>, a gaze-guided LLM agent for personalized cognitive load assessment on smart glasses.</span></li>
+        <li><time>09/2025</time><span>Serving as Workshop and Tutorial Chair of <a href="https://etra.acm.org/2026/" target="_blank" rel="noopener">ACM ETRA 2026</a>.</span></li>
+        <li><time>06/2025</time><span>Started a summer internship at <a href="https://www.meta.com/emerging-tech/reality-labs/" target="_blank" rel="noopener">Meta Reality Labs</a> as a Research Scientist Intern.</span></li>
+        <li><time>04/2025</time><span>One paper accepted to <a href="https://etra.acm.org/2025/" target="_blank" rel="noopener">ETRA 2025</a>.</span></li>
+        <li class="extra"><time>02/2025</time><span>Two papers accepted to <a href="https://cvpr.thecvf.com" target="_blank" rel="noopener">CVPR 2025</a>, including GazeVal as an <span class="hl">oral</span> at a CVPR workshop.</span></li>
+        <li class="extra"><time>01/2025</time><span>One paper accepted to <a href="https://iclr.cc/" target="_blank" rel="noopener">ICLR 2025</a>.</span></li>
+        <li class="extra"><time>11/2024</time><span>Invited talk, "EyeSee: Utilize Eye Tracking to Improve Medical Image Analysis", at <a href="https://www.mipg.upenn.edu/" target="_blank" rel="noopener">UPenn MIPG</a>.</span></li>
+        <li class="extra"><time>06/2024</time><span>Started a summer internship at <a href="https://www.linkedin.com/company/uii-america-inc/" target="_blank" rel="noopener">United Imaging Intelligence America</a>, mentored by <a href="https://wuziyan.com" target="_blank" rel="noopener">Ziyan Wu</a>.</span></li>
+        <li class="extra"><time>05/2024</time><span>Received the <a href="https://mips.synchrosystems.com" target="_blank" rel="noopener">MIPS Scholar Award</a>.</span></li>
+        <li class="extra"><time>04/2024</time><span>Invited talk, <a href="https://www.youtube.com/watch?v=gZ3bnQLpXwk&t=1912s" target="_blank" rel="noopener">"Radiologist-centered AI with Eye Tracking Techniques"</a>, at <a href="https://www.youtube.com/@stanfordmedai" target="_blank" rel="noopener">Stanford MedAI</a>.</span></li>
+      </ul>
+      <button class="more-btn" id="newsMore" type="button">Show older news ↓</button>
+    </section>
+
+    <!-- Background -->
+  <section id="experience">
+    <h2>Background</h2>
+    <div class="bg-grid">
+      <div>
+        <h3 class="bg-col">Education</h3>
+        <ul class="bg-list">
+            <li class="bg-row"><div class="bg-logo"><img src="logos/northwestern.png" alt="Northwestern University"></div><div class="bg-main"><h4>Northwestern University</h4><p class="bg-role">Electrical and Computer Engineering, Ph.D.</p></div><time>2022 – 2026</time></li>
+            <li class="bg-row"><div class="bg-logo"><span class="lg-text">ST</span></div><div class="bg-main"><h4>ShanghaiTech University</h4><p class="bg-role">Computer Science, B.Eng.</p></div><time>2018 – 2022</time></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="bg-col">Industry</h3>
+        <ul class="bg-list">
+            <li class="bg-row"><div class="bg-logo"><span class="lg-svg"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0866FF" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg></span></div><div class="bg-main"><h4>Meta</h4><p class="bg-role">Research Scientist Intern</p></div><time>2026.05 – 2026.09</time></li>
+            <li class="bg-row"><div class="bg-logo"><span class="lg-svg"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0866FF" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg></span></div><div class="bg-main"><h4>Meta</h4><p class="bg-role">Research Scientist Intern</p></div><time>2025.06 – 2025.10</time></li>
+            <li class="bg-row"><div class="bg-logo"><img class="lg-uii" src="logos/uii.png" alt="United Imaging Intelligence"></div><div class="bg-main"><h4>United Imaging Intelligence</h4><p class="bg-role">Research Scientist Intern</p></div><time>2024.06 – 2024.09</time></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Publications -->
+  <section id="publications">
+      <h2>Selected Publications</h2>
+      <p class="note" style="margin:-8px 0 14px">* Equal contribution</p>
+
+      <article class="pub">
+        <div class="pub-thumb"><img src="projects/gazemind.png" alt="GazeMind" loading="lazy"></div>
+        <div>
+          <p class="pub-title">GazeMind: A Gaze-Guided LLM Agent for Personalized Cognitive Load Assessment</p>
+          <p class="authors"><span class="me">Bin Wang</span>, Yue Liu, Benjamin Newman, Ajoy S. Fernandes, Zhiyuan Wang, Robert Cavin, Michele A. Cox, Vijay Rajanna, Takumi Bolte, Melissa Hunfalvay, Ulas Bagci, Michael J. Proulx</p>
+          <div class="meta"><span class="venue">arXiv 2026</span></div>
+          <div class="links-row"><a class="btn" href="https://arxiv.org/abs/2605.05790" target="_blank" rel="noopener">arXiv</a></div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb"><img src="projects/OIS/logo.gif" alt="OIS" loading="lazy"></div>
+        <div>
+          <p class="pub-title">Order-aware Interactive Segmentation</p>
+          <p class="authors"><span class="me">Bin Wang</span>, Anwesa Choudhuri, Meng Zheng, Zhongpai Gao, Benjamin Planche, Andong Deng, Qin Liu, Terrence Chen, Ulas Bagci, Ziyan Wu</p>
+          <div class="meta"><span class="venue">ICLR 2025</span></div>
+          <div class="links-row"><a class="btn" href="https://arxiv.org/abs/2410.12214" target="_blank" rel="noopener">arXiv</a><a class="btn" href="projects/OIS/index.html" target="_blank" rel="noopener">Project</a><a class="btn" href="https://www.youtube.com/playlist?list=PL9M9xNKC8MORxKgPlFlC9_htqxRS09USw" target="_blank" rel="noopener">Demo</a><a class="btn" href="https://notebooklm.google.com/notebook/efde2080-a23c-43e4-882d-83cb4ebb4cfd/audio" target="_blank" rel="noopener">NotebookLM</a></div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb"><img src="projects/gazevallogo.png" alt="GazeVal" loading="lazy"></div>
+        <div>
+          <p class="pub-title">Eyes Tell the Truth: GazeVal Highlights Shortcomings of Generative AI in Medical Imaging</p>
+          <p class="authors">David Wong*, <span class="me">Bin Wang*</span>, Gorkem Durak, Marouane Tliba, et al.</p>
+          <div class="meta"><span class="venue">CVPRW 2025</span><span class="award">Oral</span></div>
+          <div class="links-row"><a class="btn" href="https://arxiv.org/pdf/2503.20967" target="_blank" rel="noopener">Paper</a><a class="btn" href="projects/GazeVal/index.html" target="_blank" rel="noopener">Project</a></div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb"><img src="projects/etralogo.png" alt="ETRA 2025" loading="lazy"></div>
+        <div>
+          <p class="pub-title">Shifts in Doctors' Eye Movements Between Real and AI-Generated Medical Images</p>
+          <p class="authors">David Wong*, <span class="me">Bin Wang*</span>, Gorkem Durak, Marouane Tliba, et al.</p>
+          <div class="meta"><span class="venue">ETRA 2025</span></div>
+          <div class="links-row"><a class="btn" href="https://arxiv.org/pdf/2504.15007" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb"><img src="projects/gazegnn/logo.png" alt="GazeGNN" loading="lazy"></div>
+        <div>
+          <p class="pub-title">GazeGNN: A Gaze-Guided Graph Neural Network for Chest X-ray Classification</p>
+          <p class="authors"><span class="me">Bin Wang*</span>, Hongyi Pan*, Armstrong Aboah, Zheyuan Zhang, Elif Keles, Drew Torigian, Baris Turkbey, Elizabeth Krupinski, Jayaram Udupa, Ulas Bagci</p>
+          <div class="meta"><span class="venue">WACV 2024</span><span class="award">Early Accept</span></div>
+          <div class="links-row"><a class="btn" href="https://arxiv.org/abs/2305.18221" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/ukaukaaaa/GazeGNN" target="_blank" rel="noopener">Code</a><a class="btn" href="projects/gazegnn/gazegnn.html" target="_blank" rel="noopener">Project</a></div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb"><img src="projects/gazesam/icon.gif" alt="GazeSAM" loading="lazy"></div>
+        <div>
+          <p class="pub-title">GazeSAM: Interactive Image Segmentation with Eye Gaze and Segment Anything Model</p>
+          <p class="authors"><span class="me">Bin Wang</span>, Armstrong Aboah, Zheyuan Zhang, Ulas Bagci</p>
+          <div class="meta"><span class="venue">NeurIPS Workshop 2023</span></div>
+          <div class="links-row"><a class="btn" href="https://openreview.net/pdf?id=hJ5DREWdjs" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/ukaukaaaa/GazeSAM" target="_blank" rel="noopener">Code</a><a class="btn" href="projects/gazesam/gazesam.html" target="_blank" rel="noopener">Project</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Other Publications -->
+  <section id="other-publications">
+      <h2>Other Publications</h2>
+      <ul class="pub-list">
+        <li>
+          <p class="pub-title">Beam-wise Dose Composition Learning for Head and Neck Cancer Dose Prediction in Radiotherapy</p>
+          <p class="authors">Lin Teng*, <span class="me">Bin Wang*</span>, Xuanang Xu*, Jiadong Zhang, Lanzhuju Mei, Qianjin Feng, Dinggang Shen</p>
+          <div class="meta"><span class="venue">Medical Image Analysis 2024</span></div>
+          <div class="links-row"><a class="btn" href="https://www.sciencedirect.com/science/article/abs/pii/S1361841523003055" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/TL9792/BDCLDosePrediction" target="_blank" rel="noopener">Code</a></div>
+        </li>
+        <li>
+          <p class="pub-title">AdverIN: Monotonic Adversarial Intensity Attack for Domain Generalization in Medical Image Segmentation</p>
+          <p class="authors">Zheyuan Zhang, <span class="me">Bin Wang</span>, Lanhong Yao, Elif Keles, Debesh Jha, Matthew Antalek, Gorkem Durak, Alpay Medetalibeyoglu, Concetto Spampinato, Baris Turkbey, Boqing Gong, Ulas Bagci</p>
+          <div class="meta"><span class="venue">Medical Image Analysis 2025</span></div>
+          <div class="links-row"><a class="btn" href="https://www.sciencedirect.com/science/article/abs/pii/S1361841525003949" target="_blank" rel="noopener">Paper</a></div>
+        </li>
+        <li>
+          <p class="pub-title">Seq2Time: Sequential Knowledge Transfer for Video LLM Temporal Grounding</p>
+          <p class="authors">Andong Deng, Zhongpai Gao, Anwesa Choudhuri, Benjamin Planche, Meng Zheng, <span class="me">Bin Wang</span>, Terrence Chen, Chen Chen, Ziyan Wu</p>
+          <div class="meta"><span class="venue">CVPR 2025</span></div>
+          <div class="links-row"><a class="btn" href="https://arxiv.org/pdf/2411.16932" target="_blank" rel="noopener">Paper</a></div>
+        </li>
+        <li>
+          <p class="pub-title">Improving Self-Supervised Medical Image Pre-Training by Early Alignment with Human Eye Gaze Information</p>
+          <p class="authors">Sheng Wang, Zihao Zhao, Zhenrong Shen, <span class="me">Bin Wang</span>, Qian Wang, Dinggang Shen</p>
+          <div class="meta"><span class="venue">IEEE TMI 2025</span></div>
+          <div class="links-row"><a class="btn" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10839445" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zhaozh10/McGIP" target="_blank" rel="noopener">Code</a></div>
+        </li>
+        <li>
+          <p class="pub-title">DiffBoost: Enhancing Medical Image Segmentation via Text-Guided Diffusion Model</p>
+          <p class="authors">Zheyuan Zhang, Lanhong Yao, <span class="me">Bin Wang</span>, Debesh Jha, Gorkem Durak, Elif Keles, Alpay Medetalibeyoglu, Ulas Bagci</p>
+          <div class="meta"><span class="venue">IEEE TMI 2025</span></div>
+          <div class="links-row"><a class="btn" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10804854" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/NUBagciLab/DiffBoost" target="_blank" rel="noopener">Code</a></div>
+        </li>
+        <li>
+          <p class="pub-title">Large-scale Multi-center CT and MRI Segmentation of Pancreas with Deep Learning</p>
+          <p class="authors">Zheyuan Zhang, Elif Keles, Gorkem Durak, ..., <span class="me">Bin Wang</span>, ..., Michael B. Wallace, Ulas Bagci</p>
+          <div class="meta"><span class="venue">Medical Image Analysis 2025</span></div>
+          <div class="links-row"><a class="btn" href="https://www.sciencedirect.com/science/article/pii/S1361841524003074" target="_blank" rel="noopener">Paper</a></div>
+        </li>
+        <li>
+          <p class="pub-title">Gaze-directed Vision GNN for Mitigating Shortcut Learning in Medical Image</p>
+          <p class="authors">Shaoxuan Wu, Xiao Zhang, <span class="me">Bin Wang</span>, Zhuo Jin, Hansheng Li, Jun Feng</p>
+          <div class="meta"><span class="venue">MICCAI 2024</span></div>
+          <div class="links-row"><a class="btn" href="https://arxiv.org/pdf/2406.14050" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/SX-SS/GD-ViG" target="_blank" rel="noopener">Code</a></div>
+        </li>
+        <li>
+          <p class="pub-title">Domain Generalization with Fourier Transform and Soft Thresholding</p>
+          <p class="authors">Hongyi Pan, <span class="me">Bin Wang</span>, Zheyuan Zhang, Xin Zhu, Debesh Jha, Ahmet Enis Cetin, Concetto Spampinato, Ulas Bagci</p>
+          <div class="meta"><span class="venue">ICASSP 2024</span></div>
+          <div class="links-row"><a class="btn" href="https://arxiv.org/pdf/2309.09866.pdf" target="_blank" rel="noopener">Paper</a></div>
+        </li>
+        <li>
+          <p class="pub-title">Domain Generalization with Correlated Style Uncertainty</p>
+          <p class="authors">Zheyuan Zhang, <span class="me">Bin Wang</span>, Debesh Jha, Ugur Demir, Ulas Bagci</p>
+          <div class="meta"><span class="venue">WACV 2024</span><span class="award">Early Accept</span></div>
+          <div class="links-row"><a class="btn" href="https://arxiv.org/pdf/2212.09950.pdf" target="_blank" rel="noopener">Paper</a></div>
+        </li>
+        <li>
+          <p class="pub-title">Real-time Multi-class Helmet Violation Detection Using Few-shot Data Sampling Technique and YOLOv8</p>
+          <p class="authors">Armstrong Aboah, <span class="me">Bin Wang</span>, Ulas Bagci, Yaw Adu-Gyamfi</p>
+          <div class="meta"><span class="venue">CVPRW 2023</span><span class="award">7th place, AI City Challenge</span></div>
+          <div class="links-row"><a class="btn" href="https://openaccess.thecvf.com/content/CVPR2023W/AICity/papers/Aboah_Real-Time_Multi-Class_Helmet_Violation_Detection_Using_Few-Shot_Data_Sampling_Technique_CVPRW_2023_paper.pdf" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/aboah1994/few-shot-Video-Data-Sampling" target="_blank" rel="noopener">Code</a></div>
+        </li>
+        <li>
+          <p class="pub-title">Deep Learning-based Head and Neck Radiotherapy Planning Dose Prediction via Beam-wise Dose Decomposition</p>
+          <p class="authors"><span class="me">Bin Wang*</span>, Lin Teng*, Lanzhuju Mei, Zhiming Cui, Xuanang Xu, Qianjin Feng, Dinggang Shen</p>
+          <div class="meta"><span class="venue">MICCAI 2022</span></div>
+          <div class="links-row"><a class="btn" href="projects/beam/beampaper.pdf" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/ukaukaaaa/BeamDosePrediction" target="_blank" rel="noopener">Code</a></div>
+        </li>
+        <li>
+          <p class="pub-title">Globally Convergent Algorithms for Learning Multivariate Generalized Gaussian Distributions</p>
+          <p class="authors"><span class="me">Bin Wang</span>, Huanyu Zhang, Ziping Zhao, Ying Sun</p>
+          <div class="meta"><span class="venue">IEEE SSP 2021</span></div>
+          <div class="links-row"><a class="btn" href="projects/mggd/mggdpaper.pdf" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/ukaukaaaa/MGGD" target="_blank" rel="noopener">Code</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Service -->
+  <section id="service">
+      <h2>Service</h2>
+      <ul class="service">
+        <li><strong>Organizing:</strong> Workshop and Tutorial Chair, ACM ETRA 2026</li>
+        <li><strong>Conference reviewer:</strong> NeurIPS (2023, 2026), ICML 2026, ICLR 2026, CVPR 2026, ECCV 2026, CHI 2025, MICCAI (2024, 2025)</li>
+        <li><strong>Journal reviewer:</strong> IEEE TIP, IEEE TMI, IEEE JBHI, IEEE Transactions on Consumer Electronics, Medical Physics, Journal of Imaging Informatics in Medicine</li>
+      </ul>
+    </section>
+
+    <footer>© 2026 Bin Wang · Last updated November 2026</footer>
 </div>
 
+<script>
+  (function () {
+    var root = document.documentElement;
+    document.getElementById("themeToggle").addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
 
-	    
-<h2>About Me</h2>
-<p>
-    I am currently a fourth-year Ph.D. student at 
-    <a href="https://www.northwestern.edu/" target="_blank">Northwestern University</a> in Electrical and Computer Engineering, supervised by 
-    Prof. <a href="https://scholar.google.com/citations?user=9LUdPM4AAAAJ&hl=en" target="_blank">Ulas Bagci</a> and 
-    Prof. <a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/katsaggelos-aggelos.html" target="_blank">Aggelos K. Katsaggelos</a>.
-    I earned my B.Eng degree in computer science from 
-    <a href="https://www.shanghaitech.edu.cn/eng/" target="_blank">ShanghaiTech University</a> in 2022, where I worked with 
-    Prof. <a href="https://scholar.google.com/citations?hl=en&user=v6VYQC8AAAAJ" target="_blank">Dinggang Shen</a>.
-</p>
+    var list = document.getElementById("newsList");
+    var more = document.getElementById("newsMore");
+    more.addEventListener("click", function () {
+      var open = list.classList.toggle("expanded");
+      more.textContent = open ? "Show less ↑" : "Show older news ↓";
+    });
 
-	    
-<h2>Research Interests</h2>
-<p>I build human-centered AI systems that integrate large language models with human signals and multimodal context, advancing personalized intelligence.</p>
-<ul style="list-style: none; padding: 0 0 0 20px;">
-    <li style="margin-bottom: 15px;"><strong>Multimodal LLM:</strong> multimodal reasoning, RAG, Agentic AI, in-context learning, time-series understanding, personalization.</li>
-    <li style="margin-bottom: 15px;"><strong>Human-AI Interaction:</strong> eye tracking, cognitive modeling, gaze-guided learning, wearable AI, smart glasses.</li>
-    <li style="margin-bottom: 15px;"><strong>Vision Foundation Models:</strong> interactive segmentation, 3D scene understanding, temporal grounding, medical image analysis.</li>
-</ul>
-
-
-<h2>News</h2>
-<ul style="list-style: none; padding: 0;">
-	<li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[06/2026]</strong> 
-        <span>Started a summer internship at <a href="https://www.projectaria.com" target="_blank" style="text-decoration: none;">Meta Reality Labs</a> as a Research Scientist Intern.</span>
-    </li>
-	<li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[09/2025]</strong> 
-        <span>Served as Workshop and Tutorial Chair of <a href="https://etra.acm.org/2026/" target="_blank" style="text-decoration: none;">ETRA</a> Conference 2026.</span>
-    </li>
-    <li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[06/2025]</strong> 
-        <span>Started a summer internship at <a href="https://www.projectaria.com" target="_blank" style="text-decoration: none;">Meta Reality Labs</a> as a Research Scientist Intern.</span>
-    </li>
-    <li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[04/2025]</strong> 
-        <span>One paper is accepted by <a href="https://etra.acm.org/2025/" target="_blank" style="text-decoration: none;">ETRA 2025</a>!</span>
-    </li>
-    <li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[02/2025]</strong> 
-        <span>Two papers are accepted by <a href="https://cvpr.thecvf.com" target="_blank" style="text-decoration: none;">CVPR 2025</a>!</span>
-    </li>
-    <li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[01/2025]</strong> 
-        <span>One paper is accepted by <a href="https://iclr.cc/" target="_blank" style="text-decoration: none;">ICLR 2025</a>!</span>
-    </li>
-
-    <li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[11/2024]</strong> 
-        <span>Gave an invited talk, "EyeSee: Utilize Eye Tracking to Improve Medical Image Analysis", at <a href="https://www.mipg.upenn.edu/" target="_blank" style="text-decoration: none;">UPenn MIPG</a>.</span>
-    </li>
-	
-    <li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[06/2024]</strong> 
-        <span>Started a summer internship at <a href="https://www.linkedin.com/company/uii-america-inc/mycompany/" target="_blank" style="text-decoration: none;">United Imaging Intelligence, America</a> as a Research Scientist Intern, under the guidance of <a href="https://wuziyan.com" target="_blank" style="text-decoration: none;">Ziyan Wu</a>.</span>
-    </li>
-    
-    <li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[05/2024]</strong> 
-        <span>Honored with the <a href="https://mips.synchrosystems.com" target="_blank" style="text-decoration: none;">MIPS Scholar Award</a>.</span>
-    </li>
-    
-    <li style="margin-bottom: 20px; border-left: 4px solid #000; padding-left: 10px;">
-        <strong style="font-size: 1em;">[04/2024]</strong> 
-        <span>Gave an invited talk, <a href="https://www.youtube.com/watch?v=gZ3bnQLpXwk&t=1912s" target="_blank" style="text-decoration: none;">"Radiologist-centered AI with Eye Tracking Techniques"</a>, at <a href="https://www.youtube.com/@stanfordmedai" target="_blank" style="text-decoration: none;">Stanford MedAI</a>.</span>
-    </li>
-</ul>
-
-
-	    
-
-<h2>Selected Publications</h2>
-<table border="0" width="100%">
-    <tbody>
-        <tr>
-            <td>
-                <br>
-            </td>
-        </tr>
-
-
-<tr>
-    <td>
-        <div align="center">
-            <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/gazemind.png" alt="">
-        </div>
-    </td>
-    <td>
-        <pt>GazeMind: A Gaze-Guided LLM Agent for Personalized Cognitive Load Assessment</pt>
-        <br>
-        <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Yue Liu, Benjamin Newman, Ajoy S. Fernandes, Zhiyuan Wang, Robert Cavin, Michele A. Cox, Vijay Rajanna, Takumi Bolte, Melissa Hunfalvay, Ulas Bagci, Michael J. Proulx.<br>
-        [<a href="https://arxiv.org/abs/2605.05790" target="_blank">Arxiv</a>]&nbsp;
-    </td>
-</tr>
-		
-	 <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/OIS/logo.gif" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Order-aware Interactive Segmentation</pt>
-                <br>
-        	<span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Anwesa Choudhuri, Meng Zheng, Zhongpai Gao, Benjamin Planche, Andong Deng, Qin Liu, Terrence Chen, Ulas Bagci, Ziyan Wu.<br>
-		<span style="color:darkred;">ICLR 2025</span><br>
-                [<a href="https://arxiv.org/abs/2410.12214" target="_blank">Arxiv</a>]&nbsp;
-	        [<a href="https://ukaukaaaa.github.io/projects/OIS/index.html" target="_blank">Project Page</a>]&nbsp;
-	        [<a href="https://www.youtube.com/playlist?list=PL9M9xNKC8MORxKgPlFlC9_htqxRS09USw" target="_blank">Demo</a>]&nbsp;
-	        [<a href="https://notebooklm.google.com/notebook/efde2080-a23c-43e4-882d-83cb4ebb4cfd/audio" target="_blank">NotebookLM</a>]&nbsp;
-		
-
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/etralogo.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Shifts in Doctors’ Eye Movements Between Real and AI-Generated Medical Images</pt>
-                <br>
-                David Wong*, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>*, Gorkem Durak, Marouane Tliba, et al.<br>
-		<span style="color:darkred;">ETRA 2025</span><br>
-	        [<a href="https://arxiv.org/pdf/2504.15007" target="_blank">Paper</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/gazevallogo.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Eyes Tell the Truth: GazeVal Highlights Shortcomings of Generative AI in Medical Imaging</pt>
-                <br>
-                David Wong*, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>*, Gorkem Durak, Marouane Tliba, et al.<br>
-		<span style="color:darkred;">CVPRW 2025 [Oral]</span><br>
-                [<a href="https://arxiv.org/pdf/2503.20967" target="_blank">Paper</a>]&nbsp;
-	        [<a href="https://ukaukaaaa.github.io/projects/GazeVal/index.html" target="_blank">Project Page</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-	<!-- GazeSAM: What You See is What You Segment -->
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/gazegnn/logo.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>GazeGNN: A Gaze-Guided Graph Neural Network for Chest X-ray Classification</pt>
-                <br>
-                <span style="text-decoration: underline; font-weight: bold;">Bin Wang*</span>, Hongyi Pan*, Armstrong Aboah, Zheyuan Zhang, Elif Keles, Drew Torigian, Baris Turkbey, Elizabeth Krupinski, Jayaram Udupa, Ulas Bagci.<br>
-		<span style="color:darkred;">WACV 2024 [Early Accept]</span><br>
-                [<a href="https://arxiv.org/abs/2305.18221" target="_blank">Paper</a>]&nbsp;
-	        [<a href="https://github.com/ukaukaaaa/GazeGNN" target="_blank">Code</a>]&nbsp;
-	        [<a href="https://ukaukaaaa.github.io/projects/gazegnn/gazegnn.html" target="_blank">Project Page</a>]&nbsp;
-                <!--  <p style="color:red;font-size:60%;">  </p>
-                    <p style="color:red;font-size:100%;"> <em><a href="https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/" target="_blank" style="color:#FF0000;">Best Paper Honorable Mention Award</a></em></p> -->
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/miadose/logo.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Beam-wise dose composition learning for head and neck cancer dose prediction in radiotherapy</pt>
-                <br>
-                Lin Teng*, <span style="text-decoration: underline; font-weight: bold;">Bin Wang*</span>, Xuanang Xu*, Jiadong Zhang, Lanzhuju Mei, Qianjin Feng, Dinggang Shen.<br>
-		<span style="color:darkred;">Medical Image Analysis 2024</span><br>
-                [<a href="https://www.sciencedirect.com/science/article/abs/pii/S1361841523003055" target="_blank">Paper</a>]&nbsp;
-	        [<a href="https://github.com/TL9792/BDCLDosePrediction" target="_blank">Code</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-	    
-
-        <!-- GazeSAM: What You See is What You Segment -->
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/gazesam/icon.gif" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>GazeSAM: Interactive Image Segmentation with Eye Gaze and Segment Anything Model</pt>
-                <br>
-                <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Armstrong Aboah, Zheyuan Zhang, Ulas Bagci.<br>
-		<span style="color:darkred;">NeurIPS Workshop 2023</span><br>    
-                [<a href="https://openreview.net/pdf?id=hJ5DREWdjs" target="_blank">Paper</a>]&nbsp;
-                [<a href="https://github.com/ukaukaaaa/GazeSAM" target="_blank">Code</a>]&nbsp;
-                [<a href="https://ukaukaaaa.github.io/projects/gazesam/gazesam.html" target="_blank">Project Page</a>]&nbsp;
-<!-- 		[<a href="https://youtu.be/wRuhTUdXWEk" target="_blank">Youtube</a>]&nbsp; -->
-                <!--  <p style="color:red;font-size:60%;">  </p>
-                    <p style="color:red;font-size:100%;"> <em><a href="https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/" target="_blank" style="color:#FF0000;">Best Paper Honorable Mention Award</a></em></p> -->
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-
-        <!-- Deep learning-based Head and Neck Radiotherapy Planning Dose Prediction via Beam-wise Dose Decomposition -->
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/beam/logo.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Deep learning-based Head and Neck Radiotherapy Planning Dose Prediction via Beam-wise Dose Decomposition</pt>
-                <br>
-                <span style="text-decoration: underline; font-weight: bold;">Bin Wang*</span>, Lin Teng*, Lanzhuju Mei, Zhiming Cui, Xuanang Xu, Qianjin Feng, Dinggang Shen.<br>
-                <span style="color:darkred;">MICCAI 2022</span><br>  
-                [<a href="./projects/beam/beampaper.pdf" target="_blank">Paper</a>]&nbsp;
-                [<a href="https://github.com/ukaukaaaa/BeamDosePrediction" target="_blank">Code</a>]&nbsp;
-                <!--  <p style="color:red;font-size:60%;">  </p>
-                    <p style="color:red;font-size:100%;"> <em><a href="https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/" target="_blank" style="color:#FF0000;">Best Paper Honorable Mention Award</a></em></p> -->
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-		    
-
-            <!-- Globally Convergent Algorithms For Learning Multivariate Generalized Gaussian Distributions -->
-            <tr>
-                <td>
-                    <div align="center">
-                        <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/mggd/mggdicon.png" alt="">
-                    </div>
-                </td>
-                <td>
-                    <pt>Globally Convergent Algorithms For Learning Multivariate Generalized Gaussian Distributions</pt>
-                    <br>
-                    <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Huanyu Zhang, Ziping Zhao, Ying Sun.<br>
-                    <span style="color:darkred;">SSP 2021</span><br>  
-                    [<a href="./projects/mggd/mggdpaper.pdf" target="_blank">Paper</a>]&nbsp;
-                    [<a href="https://github.com/ukaukaaaa/MGGD" target="_blank">Code</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-	    
- 	* Equal contribution
-        </tbody>
-    </table>
-
-
-<h2>Other Publications</h2>
-<table border="0" width="100%">
-    <tbody>
-        <tr>
-            <td>
-                <br>
-            </td>
-        </tr>
-
-		        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/adverinlogo.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>AdverIN: Monotonic Adversarial Intensity Attack for Domain Generalization in Medical Image Segmentation</pt>
-                <br>
-                Zheyuan Zhang, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Lanhong Yao, Elif Keles, Debesh Jha, Matthew Antalek, Gorkem Durak, Alpay Medetalibeyoglu, Concetto Spampinato, Baris Turkbey, Boqing Gong, Ulas Bagci <br>
-		<span style="color:darkred;">Medical Image Analysis 2025</span><br>
-                [<a href="https://www.sciencedirect.com/science/article/abs/pii/S1361841525003949" target="_blank">Paper</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-	    
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/seq2timeicon.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Seq2Time: Sequential Knowledge Transfer for Video LLM Temporal Grounding</pt>
-                <br>
-                Andong Deng, Zhongpai Gao, Anwesa Choudhuri, Benjamin Planche, Meng Zheng, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Terrence Chen, Chen Chen, Ziyan Wu.<br>
-		<span style="color:darkred;">CVPR 2025</span><br>
-                [<a href="https://arxiv.org/pdf/2411.16932" target="_blank">Paper</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-	    
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/tmigazessl/logo.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Improving Self-Supervised Medical Image Pre-Training by Early Alignment with Human Eye Gaze Information</pt>
-                <br>
-                Sheng Wang, Zihao Zhao, Zhenrong Shen, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Qian Wang, Dinggang Shen.<br>
-		<span style="color:darkred;">IEEE Transactions on Medical Imaging (TMI) 2025</span><br>
-                [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10839445" target="_blank">Paper</a>]&nbsp;
-	        [<a href="https://github.com/zhaozh10/McGIP" target="_blank">Code</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/emit-diff/emit-diffcover.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>DiffBoost: Enhancing Medical Image Segmentation via Text-Guided Diffusion Model</pt>
-                <br>
-		Zheyuan Zhang, Lanhong Yao, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Debesh Jha, Gorkem Durak, Elif Keles, Alpay Medetalibeyoglu, Ulas Bagci.<br>
-		<span style="color:darkred;">IEEE Transactions on Medical Imaging (TMI) 2025</span><br>
-                [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10804854" target="_blank">Paper</a>]&nbsp;
-	        [<a href="https://github.com/NUBagciLab/DiffBoost" target="_blank">Code</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/mialargepancreas.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Large-scale multi-center CT and MRI segmentation of pancreas with deep learning</pt>
-                <br>
-		Zheyuan Zhang, Elif Keles, Gorkem Durak, ..., <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, ..., Michael B Wallace, Ulas Bagci.<br>
-		<span style="color:darkred;">Medical Image Analysis 2025</span><br>
-                [<a href="https://www.sciencedirect.com/science/article/pii/S1361841524003074" target="_blank">Paper</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-	    
-<!-- MIA Dose -->
-
-		    
-
-	 <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/miccai2024icon.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Gaze-directed Vision GNN for Mitigating Shortcut Learning in Medical Image</pt>
-                <br>
-                Shaoxuan Wu, Xiao Zhang, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Zhuo Jin, Hansheng Li, Jun Feng.<br>
-		<span style="color:darkred;">MICCAI 2024</span><br>
-                [<a href="https://arxiv.org/pdf/2406.14050" target="_blank">Paper</a>]&nbsp;
-	        [<a href="https://github.com/SX-SS/GD-ViG" target="_blank">Code</a>]&nbsp;
-                <!--  <p style="color:red;font-size:60%;">  </p>
-                    <p style="color:red;font-size:100%;"> <em><a href="https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/" target="_blank" style="color:#FF0000;">Best Paper Honorable Mention Award</a></em></p> -->
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-	    
-	 <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/fedicassp2024/logo.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Domain Generalization with Fourier Transform and Soft Thresholding</pt>
-                <br>
-                Hongyi Pan, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Zheyuan Zhang, Xin Zhu, Debesh Jha, Ahmet Enis Cetin, Concetto Spampinato, Ulas Bagci.<br>
-		<span style="color:darkred;">ICASSP 2024</span><br>
-                [<a href="https://arxiv.org/pdf/2309.09866.pdf" target="_blank">Paper</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-
-
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/csu/csuicon.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Domain generalization with correlated style uncertainty</pt>
-                <br>
-                Zheyuan Zhang, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Debesh Jha, Ugur Demir, Ulas Bagci.<br>
-		<span style="color:darkred;">WACV 2024 [Early Accept]</span><br>
-                [<a href="https://arxiv.org/pdf/2212.09950.pdf" target="_blank">Paper</a>]&nbsp;
-	        [<a href="https://github.com/ukaukaaaa/GazeGNN" target="_blank">Code</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
-
-
-        <!-- yolo -->
-        <tr>
-            <td>
-                <div align="center">
-                    <img width="300" style="padding: 0pt 10pt 0pt 0pt" src="./projects/yolo/yolocover.png" alt="">
-                </div>
-            </td>
-            <td>
-                <pt>Real-time multi-class helmet violation detection using few-shot data sampling technique and yolov8</pt>
-                <br>
-                Armstrong Aboah, <span style="text-decoration: underline; font-weight: bold;">Bin Wang</span>, Ulas Bagci, Yaw Adu-Gyamfi.<br>
-		<span style="color:darkred;">CVPR Workshop 2023<br> 7th place in 2023 AI City Challenge</span><br>    
-                [<a href="https://openaccess.thecvf.com/content/CVPR2023W/AICity/papers/Aboah_Real-Time_Multi-Class_Helmet_Violation_Detection_Using_Few-Shot_Data_Sampling_Technique_CVPRW_2023_paper.pdf" target="_blank">Paper</a>]&nbsp;
-                [<a href="https://github.com/aboah1994/few-shot-Video-Data-Sampling" target="_blank">Code</a>]&nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                </td>
-            </tr>
-
- 	* Equal contribution
-        </tbody>
-    </table>
-
-	    
-<h2>Reviewer Service</h2>
-<ul style="list-style-type: none; padding-left: 0;">
-    <li style="margin-bottom: 10px;">
-        <strong>Conferences:</strong> NeurIPS 2026, ICML 2026, ECCV 2026, ICLR 2026, CVPR 2026, MICCAI 2025, CHI 2025, MICCAI 2024, NeurIPS 2023
-    </li>
-    <li style="margin-bottom: 10px;">
-        <strong>Journals:</strong> Transactions on Image Processing (TIP), Transactions on Medical Imaging (TMI), Transactions on Consumer Electronics, Journal of Biomedical and Health Informatics (JBHI), Medical Physics, Journal of Imaging Informatics in Medicine
-    </li>
-</ul>
-
-		
-		
-		
-<!--         <h4>
-            <br> -->
-<!-- 		<p><center>
-            <div id="clustrmaps-widget" style="width:40%">
-      		<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=tsyv7MGlz0-b2EJXyrMtMb3jw0uYDjzhh26o_Msvlo4&cl=ffffff&w=a"></script>
-		    <br> -->
-
-		<div style="text-align: center; padding-top: 20px;">
-		    Design based on <a href="https://enigma-li.github.io" target="_blank">Changjian Li</a>'s website
-		</div>
-
-
-
+    var links = Array.prototype.slice.call(document.querySelectorAll("#menu a"));
+    var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+    function spy() {
+      var y = window.scrollY + 120, idx = 0;
+      secs.forEach(function (s, i) { if (s && s.offsetTop <= y) idx = i; });
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) idx = secs.length - 1;
+      links.forEach(function (a, i) { a.classList.toggle("active", i === idx); });
+    }
+    window.addEventListener("scroll", spy, { passive: true });
+    spy();
+  })();
+</script>
 </body>
 </html>
